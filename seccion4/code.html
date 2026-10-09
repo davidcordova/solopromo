@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+<html class="h-full overflow-hidden" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Soporte Promocional - Servicios (Opción 3)</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              sky: '#5BA4D9',
+              darkSky: '#418FCA',
+              navy: '#1B365D',
+              gray: '#64748B',
+              dark: '#1E293B',
+              terracotta: '#C85A28',
+              terracottaLight: '#FFF4EF',
+              green: '#7CA938',
+              greenLight: '#F3F9EA',
+              lime: '#94C83D'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'card-active': '0 12px 28px -6px rgba(27, 54, 93, 0.08), 0 4px 12px -2px rgba(91, 164, 217, 0.12)',
+            'panel': '0 20px 40px -12px rgba(27, 54, 93, 0.07), 0 1px 3px 0 rgba(0, 0, 0, 0.04)',
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Transiciones suaves entre estados activos y reposo "Quiet Mode" */
+    .service-nav-item {
+      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .service-nav-item.active {
+      opacity: 1 !important;
+      background-color: #FFFFFF !important;
+      border-color: #CBD5E1 !important;
+      box-shadow: 0 10px 25px -4px rgba(27, 54, 93, 0.07), 0 2px 6px -1px rgba(91, 164, 217, 0.12) !important;
+      transform: translateX(4px);
+    }
+    .service-nav-item.active .chevron-icon {
+      transform: translateX(3px);
+      color: #5BA4D9;
+    }
+    .service-panel {
+      display: none;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .service-panel.active {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-[#FBF9F8] text-brand-dark antialiased font-sans h-screen w-screen overflow-hidden flex flex-col justify-center items-center selection:bg-brand-sky selection:text-white relative">
+<!-- Fondo sutil ambiental arquitectónico -->
+<div class="pointer-events-none absolute inset-0 opacity-[0.035] [background-size:24px_24px] [background-image:radial-gradient(#1B365D_1px,transparent_1px)] -z-10"></div>
+<div class="pointer-events-none absolute top-4 right-1/4 w-96 h-96 bg-brand-sky/10 rounded-full blur-3xl -z-10"></div>
+<div class="pointer-events-none absolute bottom-4 left-1/4 w-80 h-80 bg-brand-terracotta/5 rounded-full blur-3xl -z-10"></div>
+<!-- Contenedor Principal en Única Vista (1080p Single Viewport Showcase) -->
+<main class="w-full max-w-7xl px-6 lg:px-10 py-6 my-auto flex flex-col justify-center">
+<!-- BEGIN: Header Compacto y Limpio -->
+<header class="mb-5 flex flex-col md:flex-row md:items-end md:justify-between gap-4 pb-4 border-b border-slate-200/70" data-purpose="header">
+<div>
+<!-- Pill Badge Institucional Cuatro Colores -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-[10px] font-bold uppercase tracking-wider text-slate-700 shadow-xs mb-2">
+<span aria-hidden="true" class="flex items-center gap-1.5 mr-0.5">
+<span class="w-2 h-2 rounded-full bg-[#58595B]"></span>
+<span class="w-2 h-2 rounded-full bg-[#5BA4D9]"></span>
+<span class="w-2 h-2 rounded-full bg-[#78A22F]"></span>
+<span class="w-2 h-2 rounded-full bg-[#BD572B]"></span>
+</span>
+<span>PROPUESTA DE VALOR • SOPORTE PROMOCIONAL</span>
+</div>
+<h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          NUESTROS <span class="text-brand-sky">SERVICIOS</span>
+</h1>
+<p class="text-xs sm:text-sm text-slate-500 mt-1 font-normal">
+          Soluciones integrales de ejecución y soporte técnico en punto de venta a nivel nacional.
+        </p>
+</div>
+<!-- Credencial Experiencia de Alto Contraste -->
+<div class="shrink-0">
+<div class="bg-white border border-slate-200 rounded-xl px-4 py-2.5 shadow-xs flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-sky-50 text-brand-sky flex items-center justify-center shrink-0">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="text-left text-xs leading-snug">
+<p class="font-bold text-slate-900">12+ Años de Experiencia</p>
+<p class="text-slate-400 text-[11px]">Cobertura Nacional</p>
+</div>
+</div>
+</div>
+</header>
+<!-- END: Header Compacto -->
+<!-- BEGIN: Grid de Dos Columnas (Selector Quiet Mode vs Panel Resaltado) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+<!-- COLUMNA IZQUIERDA: Selector de Servicios (High Contrast: Quiet Mode vs Seleccionado) -->
+<nav aria-label="Lista de Servicios" class="lg:col-span-5 flex flex-col justify-between gap-1.5 py-0.5">
+<!-- 01. Trade Marketing (Inactivo / Quiet Mode) -->
+<button class="service-nav-item opacity-45 hover:opacity-90 bg-transparent border border-transparent hover:border-slate-200 hover:bg-slate-50/60 text-left px-3.5 py-2.5 rounded-xl w-full flex items-center justify-between group cursor-pointer" data-target="trade-marketing" onclick="switchService('trade-marketing', this)" type="button">
+<div class="flex items-center gap-3 min-w-0">
+<span class="w-7 h-7 rounded-lg bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-bold shrink-0">
+              01
+            </span>
+<div class="truncate">
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block leading-tight">Canal</span>
+<h2 class="text-[13px] font-bold text-slate-800 leading-tight truncate">TRADE MARKETING</h2>
+<p class="text-[11px] text-slate-500 truncate">Promotoría / Canal Tradicional / Moderno</p>
+</div>
+</div>
+<svg class="chevron-icon w-4 h-4 text-slate-400 group-hover:text-slate-600 transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- 02. INDOOR & MÓDULOS DE EXPERIENCIA (Activo por defecto: High Contrast Bicolor Terracota + Azul) -->
+<button class="service-nav-item active text-left px-3.5 py-2.5 rounded-xl w-full flex items-center justify-between group cursor-pointer" data-target="indoor-modulos" onclick="switchService('indoor-modulos', this)" type="button">
+<div class="flex items-center gap-3 min-w-0">
+<!-- Badge 02 en pastilla azul sólida con texto blanco -->
+<span class="w-7 h-7 rounded-lg bg-brand-sky text-white flex items-center justify-center text-xs font-extrabold shrink-0 shadow-xs">
+              02
+            </span>
+<div class="truncate">
+<div class="flex items-center gap-1.5 leading-tight mb-0.5">
+<span class="text-[10px] font-bold uppercase tracking-wider text-brand-sky">Experiencia</span>
+<!-- Insignia en Terracota Cálido para acento bicolor refinado -->
+<span class="px-1.5 py-0.2 rounded text-[9px] font-bold uppercase tracking-wider bg-brand-terracotta text-white shadow-xs">
+                  Especialidad
+                </span>
+</div>
+<h2 class="text-[13px] font-extrabold text-brand-dark tracking-tight leading-tight truncate">
+                INDOOR &amp; MÓDULOS DE EXPERIENCIA
+              </h2>
+<p class="text-[11px] text-slate-600 truncate font-medium">Módulos Interactivos / Display Tecnológico</p>
+</div>
+</div>
+<!-- Chevron activo con micro-interacción -->
+<svg class="chevron-icon w-4 h-4 text-brand-sky transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+</svg>
+</button>
+<!-- 03. BTL & Activaciones (Inactivo / Quiet Mode) -->
+<button class="service-nav-item opacity-45 hover:opacity-90 bg-transparent border border-transparent hover:border-slate-200 hover:bg-slate-50/60 text-left px-3.5 py-2.5 rounded-xl w-full flex items-center justify-between group cursor-pointer" data-target="btl-activaciones" onclick="switchService('btl-activaciones', this)" type="button">
+<div class="flex items-center gap-3 min-w-0">
+<span class="w-7 h-7 rounded-lg bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-bold shrink-0">
+              03
+            </span>
+<div class="truncate">
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block leading-tight">Impacto</span>
+<h2 class="text-[13px] font-bold text-slate-800 leading-tight truncate">BTL &amp; ACTIVACIONES</h2>
+<p class="text-[11px] text-slate-500 truncate">Activaciones en Punto de Venta</p>
+</div>
+</div>
+<svg class="chevron-icon w-4 h-4 text-slate-400 group-hover:text-slate-600 transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- 04. Eventos Corporativos (Inactivo / Quiet Mode) -->
+<button class="service-nav-item opacity-45 hover:opacity-90 bg-transparent border border-transparent hover:border-slate-200 hover:bg-slate-50/60 text-left px-3.5 py-2.5 rounded-xl w-full flex items-center justify-between group cursor-pointer" data-target="eventos-corporativos" onclick="switchService('eventos-corporativos', this)" type="button">
+<div class="flex items-center gap-3 min-w-0">
+<span class="w-7 h-7 rounded-lg bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-bold shrink-0">
+              04
+            </span>
+<div class="truncate">
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block leading-tight">Escala</span>
+<h2 class="text-[13px] font-bold text-slate-800 leading-tight truncate">EVENTOS CORPORATIVOS</h2>
+<p class="text-[11px] text-slate-500 truncate">Lanzamientos / Eventos Empresariales</p>
+</div>
+</div>
+<svg class="chevron-icon w-4 h-4 text-slate-400 group-hover:text-slate-600 transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- 05. Branding Retail (Inactivo / Quiet Mode) -->
+<button class="service-nav-item opacity-45 hover:opacity-90 bg-transparent border border-transparent hover:border-slate-200 hover:bg-slate-50/60 text-left px-3.5 py-2.5 rounded-xl w-full flex items-center justify-between group cursor-pointer" data-target="branding-retail" onclick="switchService('branding-retail', this)" type="button">
+<div class="flex items-center gap-3 min-w-0">
+<span class="w-7 h-7 rounded-lg bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-bold shrink-0">
+              05
+            </span>
+<div class="truncate">
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block leading-tight">Visibilidad</span>
+<h2 class="text-[13px] font-bold text-slate-800 leading-tight truncate">BRANDING RETAIL</h2>
+<p class="text-[11px] text-slate-500 truncate">Implementación / Vitrinas / Fachadas</p>
+</div>
+</div>
+<svg class="chevron-icon w-4 h-4 text-slate-400 group-hover:text-slate-600 transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<!-- 06. Merchandising & Diseño (Inactivo / Quiet Mode) -->
+<button class="service-nav-item opacity-45 hover:opacity-90 bg-transparent border border-transparent hover:border-slate-200 hover:bg-slate-50/60 text-left px-3.5 py-2.5 rounded-xl w-full flex items-center justify-between group cursor-pointer" data-target="merchandising-diseno" onclick="switchService('merchandising-diseno', this)" type="button">
+<div class="flex items-center gap-3 min-w-0">
+<span class="w-7 h-7 rounded-lg bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-bold shrink-0">
+              06
+            </span>
+<div class="truncate">
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block leading-tight">Producción</span>
+<h2 class="text-[13px] font-bold text-slate-800 leading-tight truncate">MERCHANDISING &amp; DISEÑO</h2>
+<p class="text-[11px] text-slate-500 truncate">Mercadería de Respaldo &amp; Apoyo Visual</p>
+</div>
+</div>
+<svg class="chevron-icon w-4 h-4 text-slate-400 group-hover:text-slate-600 transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</nav>
+<!-- COLUMNA DERECHA: Panel de Detalle Derecho (Acento Bicolor y Degradado Ambiental Sutil) -->
+<section aria-label="Detalle del Servicio" class="lg:col-span-7 bg-white rounded-2xl border border-slate-200 shadow-panel flex flex-col justify-between overflow-hidden relative">
+<!-- Sutil degradado radial en esquina superior derecha que insinúa azul y lima de forma ambiental -->
+<div class="pointer-events-none absolute -top-16 -right-16 w-64 h-64 bg-radial from-sky-100/60 via-lime-100/30 to-transparent rounded-full blur-2xl"></div>
+<!-- Contenedor Interno de Paneles -->
+<div class="p-6 sm:p-7 flex-1 relative z-10 flex flex-col justify-between">
+<!-- PANEL 01: Trade Marketing -->
+<article class="service-panel" id="panel-trade-marketing">
+<header class="flex items-start justify-between pb-4 border-b border-slate-100 mb-4">
+<div>
+<span class="text-[11px] font-bold text-brand-sky uppercase tracking-wider">Línea Estratégica 01</span>
+<h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-0.5">TRADE MARKETING</h3>
+<p class="text-xs font-semibold text-brand-navy mt-0.5">Promotoría / Canal Tradicional / Canal Moderno</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-sky-50 text-brand-sky flex items-center justify-center shrink-0 border border-sky-100/80">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+</header>
+<div class="space-y-4">
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Alcance del Servicio</h4>
+<p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                  Fuerza de ventas seleccionada y capacitada. Supervisión en ruta, control de quiebres de stock y reporte diario de sell-out en las principales cadenas comerciales.
+                </p>
+</div>
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Entregables Clave de Ejecución</h4>
+<ul class="space-y-2">
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Promotores especialistas de tecnología</span>
+</li>
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Supervisión de piso y cumplimiento de planograma</span>
+</li>
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Reportes de asistencia en tiempo real</span>
+</li>
+</ul>
+</div>
+</div>
+</article>
+<!-- PANEL 02: INDOOR & MÓDULOS DE EXPERIENCIA (Activo por Defecto) -->
+<article class="service-panel active" id="panel-indoor-modulos">
+<header class="flex items-start justify-between pb-4 border-b border-slate-100 mb-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[11px] font-bold text-brand-sky uppercase tracking-wider">Línea Estratégica 02</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-brand-terracotta text-white shadow-xs">
+                    Especialidad Destacada
+                  </span>
+</div>
+<h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+                  INDOOR &amp; MÓDULOS DE EXPERIENCIA
+                </h3>
+<p class="text-xs font-semibold text-brand-navy mt-0.5">Módulos Interactivos / Display Tecnológico</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-sky-50 text-brand-sky flex items-center justify-center shrink-0 border border-sky-100/80">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+</header>
+<div class="space-y-4">
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Alcance del Servicio</h4>
+<p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                  Diseño, fabricación, montaje y mantenimiento correctivo de muebles de exhibición con pantallas táctiles, cableado oculto e iluminación LED de alto impacto.
+                </p>
+</div>
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Entregables Clave de Ejecución</h4>
+<ul class="space-y-2">
+<!-- Entregable 1: Estilo cápsula con check verde -->
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Corners temáticos e Islas para retail</span>
+</li>
+<!-- Entregable 2: Estilo cápsula con check verde -->
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Módulos interactivos plug-and-play</span>
+</li>
+<!-- Entregable 3: Acento en Terracota para guardias operativas / alto impacto -->
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-brand-terracottaLight border border-brand-terracotta/20 text-xs text-brand-terracotta font-semibold">
+<span class="w-5 h-5 rounded-full bg-brand-terracotta text-white flex items-center justify-center shrink-0 shadow-xs">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Cuadrilla técnica in-situ para reparaciones y guardias operativas</span>
+</li>
+</ul>
+</div>
+</div>
+</article>
+<!-- PANEL 03: BTL & Activaciones -->
+<article class="service-panel" id="panel-btl-activaciones">
+<header class="flex items-start justify-between pb-4 border-b border-slate-100 mb-4">
+<div>
+<span class="text-[11px] font-bold text-brand-sky uppercase tracking-wider">Línea Estratégica 03</span>
+<h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-0.5">BTL &amp; ACTIVACIONES</h3>
+<p class="text-xs font-semibold text-brand-navy mt-0.5">Activaciones en Punto de Venta</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-sky-50 text-brand-sky flex items-center justify-center shrink-0 border border-sky-100/80">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10a6 6 0 110-12 6 6 0 010 12zm0 4A10 10 0 1122 12 10.011 10.011 0 0112 22z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+</header>
+<div class="space-y-4">
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Alcance del Servicio</h4>
+<p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                  Experiencias participativas que generan conexión inmediata con el consumidor: sampling guiado, dinámicas tecnológicas y demostraciones de producto.
+                </p>
+</div>
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Entregables Clave de Ejecución</h4>
+<ul class="space-y-2">
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Lanzamientos en tiendas y centros comerciales</span>
+</li>
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Anfitrionas y animadores profesionales</span>
+</li>
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Medición directa de contactos y conversión</span>
+</li>
+</ul>
+</div>
+</div>
+</article>
+<!-- PANEL 04: Eventos Corporativos -->
+<article class="service-panel" id="panel-eventos-corporativos">
+<header class="flex items-start justify-between pb-4 border-b border-slate-100 mb-4">
+<div>
+<span class="text-[11px] font-bold text-brand-sky uppercase tracking-wider">Línea Estratégica 04</span>
+<h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-0.5">EVENTOS CORPORATIVOS</h3>
+<p class="text-xs font-semibold text-brand-navy mt-0.5">Lanzamientos / Eventos Empresariales</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-sky-50 text-brand-sky flex items-center justify-center shrink-0 border border-sky-100/80">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+</header>
+<div class="space-y-4">
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Alcance del Servicio</h4>
+<p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                  Producción integral de conferencias, aniversarios corporativos y premiaciones con cobertura audiovisual y logística completa.
+                </p>
+</div>
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Entregables Clave de Ejecución</h4>
+<ul class="space-y-2">
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Montaje escenográfico, sonido e iluminación</span>
+</li>
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Protocolo, hospitalidad y acreditaciones</span>
+</li>
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Cobertura fotográfica y streaming profesional</span>
+</li>
+</ul>
+</div>
+</div>
+</article>
+<!-- PANEL 05: Branding Retail -->
+<article class="service-panel" id="panel-branding-retail">
+<header class="flex items-start justify-between pb-4 border-b border-slate-100 mb-4">
+<div>
+<span class="text-[11px] font-bold text-brand-sky uppercase tracking-wider">Línea Estratégica 05</span>
+<h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-0.5">BRANDING RETAIL</h3>
+<p class="text-xs font-semibold text-brand-navy mt-0.5">Implementación / Vitrinas / Fachadas</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-sky-50 text-brand-sky flex items-center justify-center shrink-0 border border-sky-100/80">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+</header>
+<div class="space-y-4">
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Alcance del Servicio</h4>
+<p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                  Instalación de elementos visuales de alto impacto: viniles antiburbuja para alto tránsito, cajas backlight y ambientación completa de tiendas.
+                </p>
+</div>
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Entregables Clave de Ejecución</h4>
+<ul class="space-y-2">
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Viniles antiburbuja y cajas backlight</span>
+</li>
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Revestimiento perimetral de columnas en malls</span>
+</li>
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Auditorías periódicas de estado y limpieza</span>
+</li>
+</ul>
+</div>
+</div>
+</article>
+<!-- PANEL 06: Merchandising & Diseño -->
+<article class="service-panel" id="panel-merchandising-diseno">
+<header class="flex items-start justify-between pb-4 border-b border-slate-100 mb-4">
+<div>
+<span class="text-[11px] font-bold text-brand-sky uppercase tracking-wider">Línea Estratégica 06</span>
+<h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-0.5">MERCHANDISING &amp; DISEÑO</h3>
+<p class="text-xs font-semibold text-brand-navy mt-0.5">Mercadería de Respaldo &amp; Apoyo Visual</p>
+</div>
+<div class="w-10 h-10 rounded-xl bg-sky-50 text-brand-sky flex items-center justify-center shrink-0 border border-sky-100/80">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</div>
+</header>
+<div class="space-y-4">
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">Alcance del Servicio</h4>
+<p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed">
+                  Producción de material POP, catálogos comerciales, uniformes técnicos y adaptación de piezas gráficas a medidas de cada tienda.
+                </p>
+</div>
+<div>
+<h4 class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Entregables Clave de Ejecución</h4>
+<ul class="space-y-2">
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Artículos promocionales corporativos</span>
+</li>
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Diseño adaptado para puntos definidos</span>
+</li>
+<li class="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-50/80 border border-slate-100 text-xs text-slate-800 font-medium">
+<span class="w-5 h-5 rounded-full bg-brand-green/15 text-brand-green flex items-center justify-center shrink-0">
+<svg class="w-3 h-3" fill="currentColor" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path></svg>
+</span>
+<span>Logística y distribución a nivel nacional</span>
+</li>
+</ul>
+</div>
+</div>
+</article>
+</div>
+<!-- Franja Inferior: Indicador Operativo & Botón de Conversión de Alto Contraste -->
+<footer class="bg-slate-50/90 border-t border-slate-100 px-6 py-3.5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-brand-green animate-pulse"></span>
+<span class="text-xs font-semibold text-slate-700">
+              Disponibilidad operativa 24/7 a nivel nacional
+            </span>
+</div>
+<a class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-brand-navy hover:bg-slate-800 text-white text-xs font-bold transition-all duration-200 shadow-sm hover:shadow-md shrink-0 group" href="#contacto">
+<span>Coordinar Requerimiento</span>
+<svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+</svg>
+</a>
+</footer>
+</section>
+</div>
+<!-- END: Grid de Dos Columnas -->
+</main>
+<!-- Interactive State Controller -->
+<script>
+    function switchService(serviceKey, clickedBtn) {
+      // 1. Resetear todos los botones al modo "Quiet" (Inactivo)
+      const buttons = document.querySelectorAll('.service-nav-item');
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.add('opacity-45', 'bg-transparent', 'border-transparent');
+        
+        // Reset chevron color
+        const chevron = btn.querySelector('.chevron-icon');
+        if (chevron) {
+          chevron.classList.remove('text-brand-sky');
+          chevron.classList.add('text-slate-400');
+        }
+      });
+
+      // 2. Activar botón seleccionado
+      clickedBtn.classList.remove('opacity-45', 'bg-transparent', 'border-transparent');
+      clickedBtn.classList.add('active');
+      const activeChevron = clickedBtn.querySelector('.chevron-icon');
+      if (activeChevron) {
+        activeChevron.classList.remove('text-slate-400');
+        activeChevron.classList.add('text-brand-sky');
+      }
+
+      // 3. Cambiar panel visible
+      const panels = document.querySelectorAll('.service-panel');
+      panels.forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      const activePanel = document.getElementById('panel-' + serviceKey);
+      if (activePanel) {
+        activePanel.classList.add('active');
+      }
+    }
+  </script>
+</body></html>
