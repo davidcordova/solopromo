@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initPeruMap();
   initInfraTourAndGallery();
   initFloatingWhatsApp();
+  initCountUp();
+  initBriefModal();
 });
 
 // --------------------------------------------------------------------------
@@ -120,30 +122,50 @@ function initHeroSlider() {
   const sliderCard = document.getElementById('heroSliderCard');
   const slides = document.querySelectorAll('#sliderViewport .slider-slide');
   const dots = document.querySelectorAll('#heroSliderDots .pag-pill');
+  const progressBar = document.getElementById('heroProgressBar');
   if (!slides.length) return;
 
   let currentSlide = 0;
   let autoPlayTimer = null;
+  let progressAnimFrame = null;
+  let progressStartTime = 0;
+  const slideDuration = 5000;
   const slideCount = slides.length;
+
+  function runProgressBar() {
+    if (!progressBar) return;
+    progressStartTime = performance.now();
+    cancelAnimationFrame(progressAnimFrame);
+
+    function tick(now) {
+      const elapsed = now - progressStartTime;
+      const pct = Math.min((elapsed / slideDuration) * 100, 100);
+      progressBar.style.width = pct + '%';
+      if (pct < 100) {
+        progressAnimFrame = requestAnimationFrame(tick);
+      }
+    }
+    progressAnimFrame = requestAnimationFrame(tick);
+  }
+
+  function resetProgressBar() {
+    if (progressBar) progressBar.style.width = '0%';
+    cancelAnimationFrame(progressAnimFrame);
+  }
 
   function showSlide(index) {
     currentSlide = (index + slideCount) % slideCount;
 
     slides.forEach((slide, i) => {
-      if (i === currentSlide) {
-        slide.classList.add('active');
-      } else {
-        slide.classList.remove('active');
-      }
+      slide.classList.toggle('active', i === currentSlide);
     });
 
     dots.forEach((dot, i) => {
-      if (i === currentSlide) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
-      }
+      dot.classList.toggle('active', i === currentSlide);
     });
+
+    resetProgressBar();
+    runProgressBar();
   }
 
   // Arrow button handlers
@@ -174,9 +196,10 @@ function initHeroSlider() {
 
   function startAutoPlay() {
     if (autoPlayTimer) clearInterval(autoPlayTimer);
+    runProgressBar();
     autoPlayTimer = setInterval(() => {
       showSlide(currentSlide + 1);
-    }, 5000);
+    }, slideDuration);
   }
 
   function stopAutoPlay() {
@@ -184,6 +207,7 @@ function initHeroSlider() {
       clearInterval(autoPlayTimer);
       autoPlayTimer = null;
     }
+    cancelAnimationFrame(progressAnimFrame);
   }
 
   function resetAutoPlay() {
@@ -1863,3 +1887,157 @@ function initFloatingWhatsApp() {
 
   updateFloatingBtnVisibility();
 }
+
+// --------------------------------------------------------------------------
+// COUNT-UP ANIMATION FOR KPI NUMBERS
+// --------------------------------------------------------------------------
+function initCountUp() {
+  const targets = document.querySelectorAll('.count-up-target');
+  if (!targets.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const targetVal = parseFloat(el.getAttribute('data-target')) || 0;
+        const prefix = el.getAttribute('data-prefix') || '';
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1600;
+        const startTime = performance.now();
+
+        function updateCounter(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Ease-out cubic
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const currentCount = Math.round(targetVal * easeOut);
+
+          let displayNum = currentCount.toString();
+          if (prefix === '0' && currentCount < 10) {
+            displayNum = '0' + displayNum;
+            el.textContent = displayNum + suffix;
+          } else {
+            el.textContent = prefix + displayNum + suffix;
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+          } else {
+            if (prefix === '0' && targetVal < 10) {
+              el.textContent = '0' + targetVal + suffix;
+            } else {
+              el.textContent = prefix + targetVal + suffix;
+            }
+          }
+        }
+
+        requestAnimationFrame(updateCounter);
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  targets.forEach(t => observer.observe(t));
+}
+
+// --------------------------------------------------------------------------
+// TECHNICAL BRIEF MODAL & RFP SUBMISSION
+// --------------------------------------------------------------------------
+function initBriefModal() {
+  const modal = document.getElementById('briefModal');
+  const openBtn = document.getElementById('btnOpenBriefModal');
+  const closeBtn = document.getElementById('btnCloseBriefModal');
+  const form = document.getElementById('briefForm');
+  const fileInput = document.getElementById('briefFileInput');
+  const fileLabel = document.getElementById('briefFileLabel');
+  const dropzone = document.getElementById('briefDropzone');
+  const successMsg = document.getElementById('briefSuccessMsg');
+  const submitBtn = document.getElementById('btnSubmitBrief');
+
+  if (!modal || !openBtn) return;
+
+  function openModal() {
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal();
+  });
+
+  closeBtn?.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  // File upload label update
+  if (fileInput && fileLabel) {
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files && fileInput.files[0]) {
+        const file = fileInput.files[0];
+        const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+        fileLabel.textContent = `Archivo cargado: ${file.name} (${sizeMb} MB)`;
+        dropzone?.classList.add('has-file');
+      }
+    });
+  }
+
+  // Drag & drop visual feedback
+  if (dropzone) {
+    ['dragenter', 'dragover'].forEach(name => {
+      dropzone.addEventListener(name, (e) => {
+        e.preventDefault();
+        dropzone.classList.add('dragover');
+      });
+    });
+    ['dragleave', 'drop'].forEach(name => {
+      dropzone.addEventListener(name, (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('dragover');
+      });
+    });
+  }
+
+  // Form submit simulation
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const origText = submitBtn.innerHTML;
+      submitBtn.innerHTML = `<span>Procesando requerimiento...</span>`;
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        if (successMsg) successMsg.style.display = 'flex';
+        submitBtn.style.display = 'none';
+
+        setTimeout(() => {
+          closeModal();
+          form.reset();
+          if (fileLabel) fileLabel.textContent = 'Adjuntar archivo o planos (PDF, DWG, ZIP)';
+          submitBtn.innerHTML = origText;
+          submitBtn.style.display = 'flex';
+          submitBtn.disabled = false;
+          if (successMsg) successMsg.style.display = 'none';
+        }, 4000);
+      }, 800);
+    });
+  }
+}
+

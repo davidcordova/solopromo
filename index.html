@@ -119,7 +119,7 @@
           </div>
 
           <h1 class="hero-headline-modern">
-            Impulsamos tu marca en el punto de venta y <span class="highlight-blue">resolvemos con precisión</span><span class="period-blue"> .</span>
+            Impulsamos tu marca en el punto de venta y <span class="highlight-blue">resolvemos con precisión</span><span class="period-blue">.</span>
           </h1>
 
           <p class="hero-description-modern">
@@ -138,18 +138,18 @@
             </a>
           </div>
 
-          <!-- KPI Metric Counters -->
+          <!-- KPI Metric Counters (con animación Count-Up) -->
           <div class="hero-kpi-modern">
             <div class="kpi-block">
-              <div class="kpi-num">12+</div>
+              <div class="kpi-num count-up-target" data-target="12" data-suffix="+">12+</div>
               <div class="kpi-desc">Años de experiencia · Socios en retail</div>
             </div>
             <div class="kpi-block">
-              <div class="kpi-num">04</div>
+              <div class="kpi-num count-up-target" data-target="4" data-prefix="0">04</div>
               <div class="kpi-desc">Zonas en el país · Cobertura nacional</div>
             </div>
             <div class="kpi-block">
-              <div class="kpi-num">&lt;12h</div>
+              <div class="kpi-num count-up-target" data-target="12" data-prefix="&lt; " data-suffix="h">&lt; 12h</div>
               <div class="kpi-desc">Respuesta técnica · Cuadrilla en tienda</div>
             </div>
           </div>
@@ -159,6 +159,11 @@
         <div class="hero-display-col">
           <div class="hero-slider-card" id="heroSliderCard" role="region" aria-label="Galería de módulos comerciales y activaciones retail">
             
+            <!-- Autoplay Progress Bar -->
+            <div class="hero-slider-progress-track" aria-hidden="true">
+              <div class="hero-slider-progress-bar" id="heroProgressBar"></div>
+            </div>
+
             <!-- Slider Viewport -->
             <div class="slider-viewport" id="sliderViewport">
               
@@ -307,32 +312,32 @@
         <!-- Continuous Smooth Logo Marquee (Inspirado en marketing-alterno carousel) -->
         <div class="clients-marquee-wrapper" aria-label="Cinta continua de marcas asociadas">
           <div class="clients-marquee-track">
-            <!-- Bloque 1 -->
-            <div class="marquee-logo-cell" title="Canon"><img src="/logos/canon.svg" alt="Canon" loading="lazy" /></div>
-            <div class="marquee-logo-cell" title="ASUS"><img src="/logos/asus.svg" alt="ASUS" loading="lazy" /></div>
-            <div class="marquee-logo-cell" title="Microsoft"><img src="/logos/microsoft.svg" alt="Microsoft" loading="lazy" /></div>
-            <div class="marquee-logo-cell" title="TCL"><img src="/logos/tcl.svg" alt="TCL" loading="lazy" /></div>
-            <div class="marquee-logo-cell" title="JBL"><img src="/logos/jbl.svg" alt="JBL" loading="lazy" /></div>
-            <div class="marquee-logo-cell" title="ViewSonic"><img src="/logos/viewsonic.svg" alt="ViewSonic" loading="lazy" /></div>
-            <div class="marquee-logo-cell" title="Belkin"><img src="/logos/belkin.svg" alt="Belkin" loading="lazy" /></div>
-            <div class="marquee-logo-cell" title="Klip Xtreme"><img src="/logos/klipxtreme.svg" alt="Klip Xtreme" loading="lazy" /></div>
-            <div class="marquee-logo-cell" title="NEXXT Solutions"><img src="/logos/nexxt.svg" alt="NEXXT Solutions" loading="lazy" /></div>
-            <div class="marquee-logo-cell" title="Accvent"><img src="/logos/accvent.png" alt="Accvent" loading="lazy" /></div>
-            <div class="marquee-logo-cell" title="Xtech"><img src="/logos/xtech.svg" alt="Xtech" loading="lazy" /></div>
-            <div class="marquee-logo-cell" title="Forza Power Technologies"><img src="/logos/forza.png" alt="Forza Power Technologies" loading="lazy" /></div>
+            <!-- Bloque 1 con Micro-Badges de Casos de Éxito -->
+            <div class="marquee-logo-cell" data-brand="Canon"><img src="/logos/canon.svg" alt="Canon" loading="lazy" /><span class="marquee-case-badge">Stands interactivos &amp; displays</span></div>
+            <div class="marquee-logo-cell" data-brand="ASUS"><img src="/logos/asus.svg" alt="ASUS" loading="lazy" /><span class="marquee-case-badge">24 Módulos Gaming en retail</span></div>
+            <div class="marquee-logo-cell" data-brand="Microsoft"><img src="/logos/microsoft.svg" alt="Microsoft" loading="lazy" /><span class="marquee-case-badge">Exhibidores Surface &amp; Xbox</span></div>
+            <div class="marquee-logo-cell" data-brand="TCL"><img src="/logos/tcl.svg" alt="TCL" loading="lazy" /><span class="marquee-case-badge">Módulos TV &amp; cabeceras de góndola</span></div>
+            <div class="marquee-logo-cell" data-brand="JBL"><img src="/logos/jbl.svg" alt="JBL" loading="lazy" /><span class="marquee-case-badge">Tótems &amp; barras de sonido</span></div>
+            <div class="marquee-logo-cell" data-brand="ViewSonic"><img src="/logos/viewsonic.svg" alt="ViewSonic" loading="lazy" /><span class="marquee-case-badge">Displays &amp; señalética digital</span></div>
+            <div class="marquee-logo-cell" data-brand="Belkin"><img src="/logos/belkin.svg" alt="Belkin" loading="lazy" /><span class="marquee-case-badge">Cabeceras de góndola retail</span></div>
+            <div class="marquee-logo-cell" data-brand="Klip Xtreme"><img src="/logos/klipxtreme.svg" alt="Klip Xtreme" loading="lazy" /><span class="marquee-case-badge">Módulos de audio &amp; accesorios</span></div>
+            <div class="marquee-logo-cell" data-brand="NEXXT Solutions"><img src="/logos/nexxt.svg" alt="NEXXT Solutions" loading="lazy" /><span class="marquee-case-badge">Exhibición Smart Home retail</span></div>
+            <div class="marquee-logo-cell" data-brand="Accvent"><img src="/logos/accvent.png" alt="Accvent" loading="lazy" /><span class="marquee-case-badge">Branding y distribución nacional</span></div>
+            <div class="marquee-logo-cell" data-brand="Xtech"><img src="/logos/xtech.svg" alt="Xtech" loading="lazy" /><span class="marquee-case-badge">Módulos de periféricos gaming</span></div>
+            <div class="marquee-logo-cell" data-brand="Forza"><img src="/logos/forza.png" alt="Forza Power Technologies" loading="lazy" /><span class="marquee-case-badge">Displays de protección energética</span></div>
             <!-- Bloque 2 (duplicado para scroll infinito fluido) -->
-            <div class="marquee-logo-cell" aria-hidden="true"><img src="/logos/canon.svg" alt="Canon" loading="lazy" /></div>
-            <div class="marquee-logo-cell" aria-hidden="true"><img src="/logos/asus.svg" alt="ASUS" loading="lazy" /></div>
-            <div class="marquee-logo-cell" aria-hidden="true"><img src="/logos/microsoft.svg" alt="Microsoft" loading="lazy" /></div>
-            <div class="marquee-logo-cell" aria-hidden="true"><img src="/logos/tcl.svg" alt="TCL" loading="lazy" /></div>
-            <div class="marquee-logo-cell" aria-hidden="true"><img src="/logos/jbl.svg" alt="JBL" loading="lazy" /></div>
-            <div class="marquee-logo-cell" aria-hidden="true"><img src="/logos/viewsonic.svg" alt="ViewSonic" loading="lazy" /></div>
-            <div class="marquee-logo-cell" aria-hidden="true"><img src="/logos/belkin.svg" alt="Belkin" loading="lazy" /></div>
-            <div class="marquee-logo-cell" aria-hidden="true"><img src="/logos/klipxtreme.svg" alt="Klip Xtreme" loading="lazy" /></div>
-            <div class="marquee-logo-cell" aria-hidden="true"><img src="/logos/nexxt.svg" alt="NEXXT Solutions" loading="lazy" /></div>
-            <div class="marquee-logo-cell" aria-hidden="true"><img src="/logos/accvent.png" alt="Accvent" loading="lazy" /></div>
-            <div class="marquee-logo-cell" aria-hidden="true"><img src="/logos/xtech.svg" alt="Xtech" loading="lazy" /></div>
-            <div class="marquee-logo-cell" aria-hidden="true"><img src="/logos/forza.png" alt="Forza Power Technologies" loading="lazy" /></div>
+            <div class="marquee-logo-cell" aria-hidden="true" data-brand="Canon"><img src="/logos/canon.svg" alt="Canon" loading="lazy" /><span class="marquee-case-badge">Stands interactivos &amp; displays</span></div>
+            <div class="marquee-logo-cell" aria-hidden="true" data-brand="ASUS"><img src="/logos/asus.svg" alt="ASUS" loading="lazy" /><span class="marquee-case-badge">24 Módulos Gaming en retail</span></div>
+            <div class="marquee-logo-cell" aria-hidden="true" data-brand="Microsoft"><img src="/logos/microsoft.svg" alt="Microsoft" loading="lazy" /><span class="marquee-case-badge">Exhibidores Surface &amp; Xbox</span></div>
+            <div class="marquee-logo-cell" aria-hidden="true" data-brand="TCL"><img src="/logos/tcl.svg" alt="TCL" loading="lazy" /><span class="marquee-case-badge">Módulos TV &amp; cabeceras de góndola</span></div>
+            <div class="marquee-logo-cell" aria-hidden="true" data-brand="JBL"><img src="/logos/jbl.svg" alt="JBL" loading="lazy" /><span class="marquee-case-badge">Tótems &amp; barras de sonido</span></div>
+            <div class="marquee-logo-cell" aria-hidden="true" data-brand="ViewSonic"><img src="/logos/viewsonic.svg" alt="ViewSonic" loading="lazy" /><span class="marquee-case-badge">Displays &amp; señalética digital</span></div>
+            <div class="marquee-logo-cell" aria-hidden="true" data-brand="Belkin"><img src="/logos/belkin.svg" alt="Belkin" loading="lazy" /><span class="marquee-case-badge">Cabeceras de góndola retail</span></div>
+            <div class="marquee-logo-cell" aria-hidden="true" data-brand="Klip Xtreme"><img src="/logos/klipxtreme.svg" alt="Klip Xtreme" loading="lazy" /><span class="marquee-case-badge">Módulos de audio &amp; accesorios</span></div>
+            <div class="marquee-logo-cell" aria-hidden="true" data-brand="NEXXT Solutions"><img src="/logos/nexxt.svg" alt="NEXXT Solutions" loading="lazy" /><span class="marquee-case-badge">Exhibición Smart Home retail</span></div>
+            <div class="marquee-logo-cell" aria-hidden="true" data-brand="Accvent"><img src="/logos/accvent.png" alt="Accvent" loading="lazy" /><span class="marquee-case-badge">Branding y distribución nacional</span></div>
+            <div class="marquee-logo-cell" aria-hidden="true" data-brand="Xtech"><img src="/logos/xtech.svg" alt="Xtech" loading="lazy" /><span class="marquee-case-badge">Módulos de periféricos gaming</span></div>
+            <div class="marquee-logo-cell" aria-hidden="true" data-brand="Forza"><img src="/logos/forza.png" alt="Forza Power Technologies" loading="lazy" /><span class="marquee-case-badge">Displays de protección energética</span></div>
           </div>
         </div>
 
@@ -386,7 +391,7 @@
           <div class="about-stat-card">
             <div class="about-stat-content">
               <div class="about-stat-number-row">
-                <span class="stat-number-blue">12+</span>
+                <span class="stat-number-blue count-up-target" data-target="12" data-suffix="+">12+</span>
                 <span class="stat-number-unit">Años</span>
               </div>
               <h4 class="about-stat-heading">Socios estratégicos de nuestros clientes</h4>
@@ -1716,14 +1721,23 @@
 
           <div class="cta-action-side">
             <div class="cta-action-card-inner">
-              <span class="cta-action-eyebrow">ATENCIÓN COMERCIAL DIRECTA</span>
+              <span class="cta-action-eyebrow">CANALES DE ATENCIÓN B2B</span>
               <a href="https://wa.me/51949705664?text=Hola,%20deseo%20solicitar%20una%20propuesta%20comercial%20para%20mi%20marca%20en%20retail" target="_blank" rel="noopener noreferrer" class="btn-cta-whatsapp">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                 </svg>
-                <span>COTIZAR CON UN ASESOR</span>
+                <span>COTIZAR POR WHATSAPP</span>
               </a>
-              <span class="cta-action-subnote">Atención ágil para marcas &amp; agencias</span>
+              <button type="button" class="btn-cta-brief" id="btnOpenBriefModal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="12" y1="18" x2="12" y2="12"/>
+                  <line x1="9" y1="15" x2="15" y2="15"/>
+                </svg>
+                <span>SUBIR BRIEF / PLANOS</span>
+              </button>
+              <span class="cta-action-subnote">Atención comercial &lt; 12h garantizada</span>
             </div>
           </div>
         </div>
@@ -1892,6 +1906,85 @@
     </span>
     <span class="floating-wa-label">Cotizar por WhatsApp</span>
   </a>
+
+  <!-- Modal: Brief Técnico / Cotización Formal B2B -->
+  <div class="brief-modal-backdrop" id="briefModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="briefModalTitle">
+    <div class="brief-modal-card">
+      <button type="button" class="brief-modal-close" id="btnCloseBriefModal" aria-label="Cerrar modal">&times;</button>
+      <div class="brief-modal-header">
+        <span class="brief-modal-tag">LICITACIÓN &amp; COTIZACIÓN B2B</span>
+        <h3 id="briefModalTitle" class="brief-modal-title">Solicitud de Propuesta Técnica</h3>
+        <p class="brief-modal-sub">Envíanos tus especificaciones, planos (DWG/PDF) o alcance de campaña para una cotización formal en menos de 12 horas.</p>
+      </div>
+
+      <form id="briefForm" class="brief-modal-form" onsubmit="event.preventDefault();">
+        <div class="brief-form-grid">
+          <div class="brief-form-group">
+            <label for="briefName">Nombre y Apellido *</label>
+            <input type="text" id="briefName" placeholder="Ej. Carlos Mendoza" required />
+          </div>
+          <div class="brief-form-group">
+            <label for="briefCompany">Empresa / Marca *</label>
+            <input type="text" id="briefCompany" placeholder="Ej. Asus Perú / Saga Falabella" required />
+          </div>
+          <div class="brief-form-group">
+            <label for="briefEmail">Correo Corporativo *</label>
+            <input type="email" id="briefEmail" placeholder="carlos@empresa.com" required />
+          </div>
+          <div class="brief-form-group">
+            <label for="briefPhone">Teléfono / WhatsApp *</label>
+            <input type="tel" id="briefPhone" placeholder="+51 987 654 321" required />
+          </div>
+        </div>
+
+        <div class="brief-form-group">
+          <label for="briefService">Línea de Solución Requerida</label>
+          <select id="briefService">
+            <option value="indoor">Indoor &amp; Módulos Retail / Stands Comerciales</option>
+            <option value="btl">Activaciones BTL &amp; Eventos de Marca</option>
+            <option value="trade">Trade Marketing &amp; Red de Promotoría</option>
+            <option value="branding">Branding Retail &amp; Producción Gráfica</option>
+            <option value="integral">Servicio Integral 360°</option>
+          </select>
+        </div>
+
+        <div class="brief-form-group">
+          <label for="briefDetails">Detalle del Requerimiento / Alcance</label>
+          <textarea id="briefDetails" rows="3" placeholder="Describe brevemente tiendas a intervenir, medidas estimadas o fecha de lanzamiento..."></textarea>
+        </div>
+
+        <div class="brief-upload-dropzone" id="briefDropzone">
+          <input type="file" id="briefFileInput" class="brief-file-input" accept=".pdf,.dwg,.zip,.rar,.png,.jpg,.jpeg,.doc,.docx" />
+          <div class="brief-dropzone-content">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            <div class="dropzone-text-group">
+              <strong id="briefFileLabel">Adjuntar archivo o planos (PDF, DWG, ZIP)</strong>
+              <span>Hasta 25MB · Confidencialidad y NDA garantizados</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="brief-modal-actions">
+          <button type="submit" class="btn-brief-submit" id="btnSubmitBrief">
+            <span>Enviar Requerimiento Técnico</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+
+        <div class="brief-success-message" id="briefSuccessMsg" style="display: none;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+          <div>
+            <strong>¡Requerimiento recibido con éxito!</strong>
+            <p>Nuestro equipo de ingeniería de proyectos y KAM asignado revisará tus especificaciones y te contactará en menos de 12 horas.</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script type="module" src="/src/main.js"></script>
 </body>
