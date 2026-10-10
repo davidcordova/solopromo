@@ -6468,49 +6468,6 @@ html, body {
   transition: width 0.1s linear;
 }
 
-/* 2. Client Marquee Proof-of-Work Badges */
-.marquee-logo-cell {
-  position: relative !important;
-  cursor: pointer;
-}
-.marquee-case-badge {
-  position: absolute;
-  bottom: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%) translateY(6px);
-  background: rgba(15, 23, 42, 0.95);
-  color: #38BDF8;
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 100;
-  backdrop-filter: blur(8px);
-}
-.marquee-case-badge::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 5px;
-  border-style: solid;
-  border-color: rgba(15, 23, 42, 0.95) transparent transparent transparent;
-}
-.marquee-logo-cell:hover .marquee-case-badge {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
-}
-
 /* 3. Enhanced High-Tech Hotspots */
 .photo-hotspot-pin {
   width: 32px !important;
@@ -6784,4 +6741,222 @@ html, body {
   font-size: 0.82rem;
   line-height: 1.4;
   margin: 0;
+}
+
+
+/* ==========================================================================
+   DE-AI EDITORIAL SYSTEM: Clean Typography & Uncluttered Hierarchy
+   ========================================================================== */
+
+/* Universal Editorial Kickers (replaces artificial pill capsules) */
+.hero-kicker,
+.section-kicker,
+.modal-kicker,
+.tour-zone-kicker,
+.slide-caption-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-headings);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #38BDF8;
+  margin-bottom: 0.75rem;
+  background: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.hero-kicker {
+  color: #38BDF8;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 1.1rem;
+}
+
+.hero-kicker::before,
+.section-kicker::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background: #38BDF8;
+  border-radius: 1px;
+}
+
+.text-center .section-kicker::before {
+  display: none;
+}
+
+.modal-kicker {
+  color: #38BDF8;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.5rem;
+}
+
+.tour-zone-kicker {
+  color: #38BDF8;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.4rem;
+}
+
+.slide-caption-kicker {
+  color: #38BDF8;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.book-caption-category {
+  color: #38BDF8;
+  font-family: var(--font-headings);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+/* Clean Top Status Label */
+.top-status-label {
+  font-family: var(--font-headings);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #38BDF8;
+}
+
+/* About Highlights Row (Replaces pill badges) */
+.about-highlights-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1.4rem;
+  font-size: 0.88rem;
+  color: #CBD5E1;
+}
+
+.about-highlight-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.highlight-sep {
+  color: rgba(148, 163, 184, 0.4);
+}
+
+/* Editorial Numerals (Replaces value-num-pill) */
+.value-num {
+  font-family: var(--font-headings);
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #38BDF8;
+  margin-bottom: 0.6rem;
+  display: inline-block;
+  letter-spacing: -0.02em;
+}
+
+/* Clean Contact Info Meta Row */
+.cta-contact-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  margin-top: 1.75rem;
+}
+
+.cta-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: #E2E8F0;
+}
+
+.cta-meta-item svg {
+  color: #38BDF8;
+  flex-shrink: 0;
+}
+
+.cta-meta-item strong {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* Clean Service Feature Bullets */
+.service-feature-bullet {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #94A3B8;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.service-feature-bullet svg {
+  color: #22C55E;
+  flex-shrink: 0;
+}
+
+/* Refined Service Navigator items */
+.service-nav-item .nav-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.service-nav-item .nav-item-title {
+  font-family: var(--font-headings);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.service-nav-item .nav-item-sub {
+  font-size: 0.78rem;
+  color: #64748B;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.service-nav-item.active .nav-item-title {
+  color: #0066FF;
+}
+
+/* Client Marquee Logo Cells: Clean, balanced, prestigious */
+.marquee-logo-cell img {
+  max-height: 38px;
+  max-width: 125px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(20%);
+  opacity: 0.88;
+  transition: all 0.25s ease;
+}
+
+.marquee-logo-cell:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.06);
 }
