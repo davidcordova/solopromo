@@ -220,6 +220,32 @@ function initHeroSlider() {
     sliderCard.addEventListener('mouseleave', startAutoPlay);
   }
 
+  // Touch Swipe for mobile/tablets
+  const viewport = document.getElementById('sliderViewport');
+  if (viewport) {
+    let heroTouchStartX = 0;
+    let heroTouchEndX = 0;
+    viewport.addEventListener('touchstart', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        heroTouchStartX = e.changedTouches[0].screenX;
+      }
+    }, { passive: true });
+    viewport.addEventListener('touchend', (e) => {
+      if (e.changedTouches && e.changedTouches[0]) {
+        heroTouchEndX = e.changedTouches[0].screenX;
+        const swipeDistance = heroTouchEndX - heroTouchStartX;
+        if (Math.abs(swipeDistance) > 35) {
+          if (swipeDistance < 0) {
+            showSlide(currentSlide + 1);
+          } else {
+            showSlide(currentSlide - 1);
+          }
+          resetAutoPlay();
+        }
+      }
+    }, { passive: true });
+  }
+
   startAutoPlay();
 }
 
