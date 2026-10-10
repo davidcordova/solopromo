@@ -4831,34 +4831,37 @@ h1, h2, h3, h4 {
   z-index: 2;
 }
 
-/* HERO: Vibrant Retail Showroom with Readable Left Vignette */
+/* Luminous Daylight Architectural Veils (Eliminates Dark "Zebra" Style) */
 .overlay-hero {
-  background: linear-gradient(90deg, 
-    rgba(5, 10, 24, 0.92) 0%, 
-    rgba(8, 15, 33, 0.82) 42%, 
-    rgba(11, 22, 45, 0.48) 72%, 
-    rgba(11, 22, 45, 0.22) 100%
-  );
-}
-
-.overlay-contacto {
-  background: linear-gradient(135deg, rgba(5, 10, 24, 0.72) 0%, rgba(10, 20, 42, 0.58) 100%);
-}
-
-.overlay-cobertura {
-  background: linear-gradient(135deg, 
-    rgba(5, 11, 26, 0.88) 0%, 
-    rgba(8, 17, 38, 0.80) 45%, 
-    rgba(10, 22, 48, 0.85) 100%
-  );
+  background: linear-gradient(90deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    rgba(255, 255, 255, 0.90) 42%,
+    rgba(255, 255, 255, 0.68) 75%,
+    rgba(255, 255, 255, 0.42) 100%
+  ) !important;
 }
 
 .overlay-nosotros {
-  background: linear-gradient(135deg, 
-    rgba(6, 12, 28, 0.88) 0%, 
-    rgba(9, 18, 40, 0.80) 45%, 
-    rgba(12, 24, 50, 0.85) 100%
-  );
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 250, 252, 0.90) 50%,
+    rgba(255, 255, 255, 0.92) 100%
+  ) !important;
+}
+
+.overlay-cobertura {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 250, 252, 0.90) 50%,
+    rgba(255, 255, 255, 0.92) 100%
+  ) !important;
+}
+
+.overlay-contacto {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(248, 250, 252, 0.88) 100%
+  ) !important;
 }
 
 /* ==========================================================================
@@ -6959,4 +6962,392 @@ html, body {
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.06);
+}
+
+
+/* ==========================================================================
+   LUMINOUS DAYLIGHT PARALLAX & ORGANIC SEAMLESS FLOW SYSTEM
+   ========================================================================== */
+
+/* Organic Soft Edge Feathering: Eradicates the zebra-stripe transition */
+.parallax-section {
+  position: relative;
+  background-color: #F8FAFC !important;
+}
+
+.parallax-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: linear-gradient(to bottom, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.parallax-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: linear-gradient(to top, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 1. HERO: Crisp Luxury Commercial Architecture */
+.section-hero {
+  background-color: #F8FAFC !important;
+  border-bottom: none !important;
+}
+
+.section-hero .hero-kicker {
+  color: #0066FF !important;
+}
+.section-hero .hero-kicker::before {
+  background: #0066FF !important;
+}
+
+.hero-headline-modern {
+  color: #0F172A !important;
+  text-shadow: none !important;
+}
+
+.hero-headline-modern .highlight-blue {
+  color: #0066FF !important;
+  background: linear-gradient(135deg, #0066FF 0%, #0284C7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: none !important;
+}
+
+.hero-headline-modern .period-blue {
+  color: #0066FF !important;
+  text-shadow: none !important;
+}
+
+.hero-description-modern {
+  color: #334155 !important;
+  text-shadow: none !important;
+  font-weight: 450;
+}
+
+.btn-hero-primary {
+  background: linear-gradient(135deg, #0066FF 0%, #0284C7 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 24px rgba(0, 102, 255, 0.25) !important;
+}
+.btn-hero-primary:hover {
+  background: linear-gradient(135deg, #0052CC 0%, #0369A1 100%) !important;
+  box-shadow: 0 14px 30px rgba(0, 102, 255, 0.35) !important;
+  transform: translateY(-2px);
+}
+
+.btn-hero-secondary {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1px solid #CBD5E1 !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.btn-hero-secondary:hover {
+  background: #F8FAFC !important;
+  color: #0066FF !important;
+  border-color: #0066FF !important;
+  box-shadow: 0 6px 18px rgba(0, 102, 255, 0.15) !important;
+  transform: translateY(-2px);
+}
+
+.hero-kpi-modern {
+  border-top: 1px solid #E2E8F0 !important;
+}
+.hero-kpi-modern .kpi-num {
+  color: #0F172A !important;
+}
+.hero-kpi-modern .kpi-desc {
+  color: #64748B !important;
+}
+
+.hero-slider-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08) !important;
+}
+
+.hero-slider-progress-track {
+  background: rgba(0, 0, 0, 0.06) !important;
+}
+.hero-slider-progress-bar {
+  background: linear-gradient(90deg, #0066FF, #0284C7) !important;
+}
+
+@media (max-width: 991px) {
+  .overlay-hero {
+    background: rgba(255, 255, 255, 0.94) !important;
+  }
+}
+
+/* 2. NOSOTROS: Luminous Industrial Plant & Corporate Strength */
+.section-about {
+  background-color: #F8FAFC !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.section-about .section-kicker {
+  color: #0066FF !important;
+}
+.section-about .section-kicker::before {
+  background: #0066FF !important;
+}
+
+.section-about .about-main-heading {
+  color: #0F172A !important;
+  text-shadow: none !important;
+}
+
+.section-about .about-heading-accent-bar {
+  background: linear-gradient(90deg, #0066FF, #0284C7) !important;
+}
+
+.section-about .about-main-description {
+  color: #334155 !important;
+  text-shadow: none !important;
+}
+
+.section-about .about-highlights-row {
+  color: #475569 !important;
+}
+
+.section-about .about-stat-card {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+}
+
+.section-about .about-stat-card .stat-number-blue {
+  color: #0066FF !important;
+}
+.section-about .about-stat-card .stat-number-unit {
+  color: #64748B !important;
+}
+.section-about .about-stat-heading {
+  color: #0F172A !important;
+}
+.section-about .about-stat-subtext {
+  color: #64748B !important;
+}
+.section-about .about-stat-watermark {
+  stroke: rgba(0, 102, 255, 0.08) !important;
+}
+
+.section-about .about-value-card {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+}
+.section-about .about-value-card:hover {
+  background: #FFFFFF !important;
+  border-color: #0066FF !important;
+  box-shadow: 0 16px 36px rgba(0, 102, 255, 0.12) !important;
+  transform: translateY(-2px);
+}
+
+.section-about .value-num {
+  color: #0066FF !important;
+}
+.section-about .value-card-title {
+  color: #0F172A !important;
+}
+.section-about .value-card-desc {
+  color: #475569 !important;
+}
+
+.about-book-slider {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08) !important;
+}
+
+.book-page-counter {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+/* 3. COBERTURA: Luminous Nationwide Network & Interactive Peru Map */
+.section-coverage {
+  background-color: #F8FAFC !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.section-coverage .section-kicker {
+  color: #0066FF !important;
+}
+.section-coverage .section-kicker::before {
+  background: #0066FF !important;
+}
+
+.section-coverage .section-main-heading {
+  color: #0F172A !important;
+  text-shadow: none !important;
+}
+
+.section-coverage .coverage-subparagraph {
+  color: #334155 !important;
+  text-shadow: none !important;
+}
+
+.section-coverage .peru-map-container,
+.section-coverage .map-card-container {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08) !important;
+  background-image: radial-gradient(rgba(0, 102, 255, 0.05) 1px, transparent 0) !important;
+}
+
+.section-coverage .map-card-bar {
+  border-bottom: 1px solid #E2E8F0 !important;
+  color: #0284C7 !important;
+}
+
+.section-coverage .dept-path {
+  fill: #F1F5F9 !important;
+  stroke: #CBD5E1 !important;
+  stroke-width: 0.9 !important;
+}
+.section-coverage .dept-path:hover {
+  fill: #E2E8F0 !important;
+}
+
+.section-coverage .zone-box-item {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04) !important;
+}
+.section-coverage .zone-box-item:hover {
+  background: #FFFFFF !important;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08) !important;
+}
+
+.section-coverage .zone-box-header h4 {
+  color: #0F172A !important;
+}
+
+.section-coverage .zone-cities-text {
+  color: #475569 !important;
+}
+.section-coverage .zone-cities-text strong {
+  color: #0F172A !important;
+}
+
+.section-coverage .zone-box-item[data-zone="centro"] .zone-response-note {
+  color: #0369A1 !important;
+  background: #E0F2FE !important;
+  border: 1px solid #BAE6FD !important;
+}
+.section-coverage .zone-box-item[data-zone="centro"] .zone-response-note strong {
+  color: #0284C7 !important;
+}
+.section-coverage .zone-box-item[data-zone="centro"].active {
+  background: #FFFFFF !important;
+  border-color: #0284C7 !important;
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.16) !important;
+}
+
+.section-coverage .zone-box-item[data-zone="norte"] .zone-response-note {
+  color: #1D4ED8 !important;
+  background: #EFF6FF !important;
+  border: 1px solid #BFDBFE !important;
+}
+.section-coverage .zone-box-item[data-zone="norte"] .zone-response-note strong {
+  color: #1E40AF !important;
+}
+.section-coverage .zone-box-item[data-zone="norte"].active {
+  background: #FFFFFF !important;
+  border-color: #2563EB !important;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.16) !important;
+}
+
+.section-coverage .zone-box-item[data-zone="sur"] .zone-response-note {
+  color: #C2410C !important;
+  background: #FFF7ED !important;
+  border: 1px solid #FFEDD5 !important;
+}
+.section-coverage .zone-box-item[data-zone="sur"] .zone-response-note strong {
+  color: #9A3412 !important;
+}
+.section-coverage .zone-box-item[data-zone="sur"].active {
+  background: #FFFFFF !important;
+  border-color: #EA580C !important;
+  box-shadow: 0 10px 25px rgba(234, 88, 12, 0.16) !important;
+}
+
+.section-coverage .zone-box-item[data-zone="oriente"] .zone-response-note {
+  color: #15803D !important;
+  background: #F0FDF4 !important;
+  border: 1px solid #BBF7D0 !important;
+}
+.section-coverage .zone-box-item[data-zone="oriente"] .zone-response-note strong {
+  color: #166534 !important;
+}
+.section-coverage .zone-box-item[data-zone="oriente"].active {
+  background: #FFFFFF !important;
+  border-color: #16A34A !important;
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.16) !important;
+}
+
+/* 4. CONTACTO: Executive Daylight Architectural Card */
+.section-conversion-cta {
+  background-color: #F8FAFC !important;
+}
+
+.cta-corporate-card {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.08) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+}
+
+.cta-main-title {
+  color: #0F172A !important;
+}
+
+.cta-lead-text {
+  color: #475569 !important;
+}
+
+.cta-meta-item {
+  color: #334155 !important;
+}
+.cta-meta-item strong {
+  color: #0F172A !important;
+}
+.cta-meta-item svg {
+  color: #0066FF !important;
+}
+
+.cta-action-card-inner {
+  background: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04) !important;
+}
+
+.cta-action-eyebrow {
+  color: #0284C7 !important;
+}
+
+.cta-action-subnote {
+  color: #64748B !important;
 }
