@@ -461,10 +461,10 @@ function initPeruMap() {
   const cityMarkers = document.querySelectorAll('.city-marker');
 
   const zoneColors = {
-    centro: '#5FA8DC',
-    norte: '#3A6CA8',
-    sur: '#C66533',
-    oriente: '#7DA137'
+    centro: '#0284C7',
+    norte: '#1D4ED8',
+    sur: '#EA580C',
+    oriente: '#16A34A'
   };
 
   const zoneTitles = {

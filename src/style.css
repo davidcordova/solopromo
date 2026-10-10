@@ -2699,10 +2699,10 @@ h1, h2, h3, h4 {
 .zone-box-item.active .zone-color-indicator {
   transform: scale(1.3);
 }
-.bg-sky { background-color: #5FA8DC; box-shadow: 0 0 8px rgba(95, 168, 220, 0.6); }
-.bg-blue-deep { background-color: #3A6CA8; box-shadow: 0 0 8px rgba(58, 108, 168, 0.6); }
-.bg-orange { background-color: #C66533; box-shadow: 0 0 8px rgba(198, 101, 51, 0.6); }
-.bg-green { background-color: #7DA137; box-shadow: 0 0 8px rgba(125, 161, 55, 0.6); }
+.bg-sky { background-color: #0284C7; box-shadow: 0 0 8px rgba(2, 132, 199, 0.6); }
+.bg-blue-deep { background-color: #1D4ED8; box-shadow: 0 0 8px rgba(29, 78, 216, 0.6); }
+.bg-orange { background-color: #EA580C; box-shadow: 0 0 8px rgba(234, 88, 12, 0.6); }
+.bg-green { background-color: #16A34A; box-shadow: 0 0 8px rgba(22, 163, 74, 0.6); }
 
 .zone-box-header h4 {
   font-size: 0.95rem;
@@ -5218,8 +5218,8 @@ h1, h2, h3, h4 {
 
 .section-coverage .map-macro-zone.active-zone[data-zone="oriente"] .dept-path,
 .section-coverage #mapZoneOriente.active-zone .dept-path {
-  fill: #4D7C0F !important;
-  filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.55)) !important;
+  fill: #16A34A !important;
+  filter: drop-shadow(0 0 8px rgba(22, 163, 74, 0.55)) !important;
 }
 
 .section-coverage .map-instruction-pill {
@@ -5228,107 +5228,208 @@ h1, h2, h3, h4 {
   border: 1px solid rgba(56, 189, 248, 0.3) !important;
 }
 
-/* Glassmorphism Zone Cards */
+/* ==========================================================================
+   COBERTURA: TARJETAS CROMÁTICAS DE MACROZONAS (Celeste, Azul, Naranja, Verde)
+   ========================================================================== */
+
+/* 1. Estado Base para Tarjetas Inactivas (Fondo blanco, borde sutil de su zona) */
 .section-coverage .zone-box-item {
-  background: rgba(11, 20, 38, 0.82) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35) !important;
-  border-radius: 14px;
-  transition: all 0.25s ease;
+  background: #FFFFFF !important;
+  border: 1.5px solid rgba(203, 213, 225, 0.7) !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05) !important;
+  border-radius: 14px !important;
+  padding: 16px 20px !important;
+  cursor: pointer !important;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
-.section-coverage .zone-box-item:hover {
-  transform: translateY(-2px);
-  background: rgba(15, 26, 50, 0.94) !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
+.section-coverage .zone-box-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-bottom: 8px !important;
 }
 
 .section-coverage .zone-box-header h4 {
-  color: #FFFFFF !important;
-  font-weight: 700;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  letter-spacing: 0.5px !important;
+  margin: 0 !important;
+  transition: color 0.25s ease !important;
 }
 
 .section-coverage .zone-cities-text {
-  color: #94A3B8 !important;
+  font-size: 0.86rem !important;
+  color: #475569 !important;
+  line-height: 1.5 !important;
+  margin-bottom: 8px !important;
+  transition: color 0.25s ease !important;
 }
 
 .section-coverage .zone-cities-text strong {
-  color: #CBD5E1 !important;
+  color: #0F172A !important;
+  font-weight: 700 !important;
+  transition: color 0.25s ease !important;
 }
 
-/* Zone-specific SLA color accents on dark glass */
+.section-coverage .zone-response-note {
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  padding: 8px 14px !important;
+  border-radius: 8px !important;
+  margin-top: 8px !important;
+  display: block !important;
+  transition: all 0.25s ease !important;
+}
+
+/* Indicadores de Punto en Tarjeta */
+.section-coverage .zone-color-indicator {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  flex-shrink: 0 !important;
+  transition: all 0.25s ease !important;
+}
+.section-coverage .zone-color-indicator.bg-sky {
+  background-color: #0284C7 !important;
+  box-shadow: 0 0 8px rgba(2, 132, 199, 0.5) !important;
+}
+.section-coverage .zone-color-indicator.bg-blue-deep {
+  background-color: #1D4ED8 !important;
+  box-shadow: 0 0 8px rgba(29, 78, 216, 0.5) !important;
+}
+.section-coverage .zone-color-indicator.bg-orange {
+  background-color: #EA580C !important;
+  box-shadow: 0 0 8px rgba(234, 88, 12, 0.5) !important;
+}
+.section-coverage .zone-color-indicator.bg-green {
+  background-color: #16A34A !important;
+  box-shadow: 0 0 8px rgba(22, 163, 74, 0.5) !important;
+}
+
+/* Bordes y SLA para cada zona en estado normal */
+.section-coverage .zone-box-item[data-zone="centro"] {
+  border-left: 5px solid #0284C7 !important;
+}
 .section-coverage .zone-box-item[data-zone="centro"] .zone-response-note {
-  color: #38BDF8 !important;
-  background: rgba(56, 189, 248, 0.14) !important;
-  border: 1px solid rgba(56, 189, 248, 0.35) !important;
+  background: #F0F9FF !important;
+  border: 1px solid #BAE6FD !important;
+  color: #0369A1 !important;
 }
 .section-coverage .zone-box-item[data-zone="centro"] .zone-response-note strong {
-  color: #BAE6FD !important;
-}
-.section-coverage .zone-box-item[data-zone="centro"] .zone-badge-sla {
-  color: #38BDF8 !important;
-  background: rgba(56, 189, 248, 0.14) !important;
-}
-.section-coverage .zone-box-item[data-zone="centro"].active {
-  background: rgba(15, 26, 50, 0.96) !important;
-  border-color: #38BDF8 !important;
-  box-shadow: 0 12px 32px rgba(56, 189, 248, 0.25) !important;
+  color: #0C4A6E !important;
 }
 
+.section-coverage .zone-box-item[data-zone="norte"] {
+  border-left: 5px solid #1D4ED8 !important;
+}
 .section-coverage .zone-box-item[data-zone="norte"] .zone-response-note {
-  color: #60A5FA !important;
-  background: rgba(96, 165, 250, 0.14) !important;
-  border: 1px solid rgba(96, 165, 250, 0.35) !important;
+  background: #EFF6FF !important;
+  border: 1px solid #BFDBFE !important;
+  color: #1D4ED8 !important;
 }
 .section-coverage .zone-box-item[data-zone="norte"] .zone-response-note strong {
-  color: #DBEAFE !important;
-}
-.section-coverage .zone-box-item[data-zone="norte"] .zone-badge-sla {
-  color: #60A5FA !important;
-  background: rgba(96, 165, 250, 0.14) !important;
-}
-.section-coverage .zone-box-item[data-zone="norte"].active {
-  background: rgba(15, 26, 50, 0.96) !important;
-  border-color: #60A5FA !important;
-  box-shadow: 0 12px 32px rgba(96, 165, 250, 0.25) !important;
+  color: #1E3A8A !important;
 }
 
+.section-coverage .zone-box-item[data-zone="sur"] {
+  border-left: 5px solid #EA580C !important;
+}
 .section-coverage .zone-box-item[data-zone="sur"] .zone-response-note {
-  color: #FB923C !important;
-  background: rgba(251, 146, 60, 0.14) !important;
-  border: 1px solid rgba(251, 146, 60, 0.35) !important;
+  background: #FFF7ED !important;
+  border: 1px solid #FED7AA !important;
+  color: #C2410C !important;
 }
 .section-coverage .zone-box-item[data-zone="sur"] .zone-response-note strong {
-  color: #FFEDD5 !important;
-}
-.section-coverage .zone-box-item[data-zone="sur"] .zone-badge-sla {
-  color: #FB923C !important;
-  background: rgba(251, 146, 60, 0.14) !important;
-}
-.section-coverage .zone-box-item[data-zone="sur"].active {
-  background: rgba(15, 26, 50, 0.96) !important;
-  border-color: #FB923C !important;
-  box-shadow: 0 12px 32px rgba(251, 146, 60, 0.25) !important;
+  color: #7C2D12 !important;
 }
 
+.section-coverage .zone-box-item[data-zone="oriente"] {
+  border-left: 5px solid #16A34A !important;
+}
 .section-coverage .zone-box-item[data-zone="oriente"] .zone-response-note {
-  color: #4ADE80 !important;
-  background: rgba(74, 222, 128, 0.14) !important;
-  border: 1px solid rgba(74, 222, 128, 0.35) !important;
+  background: #F0FDF4 !important;
+  border: 1px solid #BBF7D0 !important;
+  color: #15803D !important;
 }
 .section-coverage .zone-box-item[data-zone="oriente"] .zone-response-note strong {
-  color: #DCFCE7 !important;
+  color: #14532D !important;
 }
-.section-coverage .zone-box-item[data-zone="oriente"] .zone-badge-sla {
-  color: #4ADE80 !important;
-  background: rgba(74, 222, 128, 0.14) !important;
+
+/* ==========================================================================
+   2. ESTADOS ACTIVOS Y HOVER: PINTADOS CON EL COLOR CORRESPONDIENTE
+   ========================================================================== */
+
+.section-coverage .zone-box-item.active,
+.section-coverage .zone-box-item:hover {
+  transform: translateX(8px) translateY(-2px) !important;
 }
+.section-coverage .zone-box-item.active .zone-box-header h4,
+.section-coverage .zone-box-item:hover .zone-box-header h4 {
+  color: #FFFFFF !important;
+}
+.section-coverage .zone-box-item.active .zone-cities-text,
+.section-coverage .zone-box-item:hover .zone-cities-text {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+.section-coverage .zone-box-item.active .zone-cities-text strong,
+.section-coverage .zone-box-item:hover .zone-cities-text strong {
+  color: #FFFFFF !important;
+}
+.section-coverage .zone-box-item.active .zone-response-note,
+.section-coverage .zone-box-item:hover .zone-response-note {
+  background: rgba(0, 0, 0, 0.22) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  color: #FFFFFF !important;
+}
+.section-coverage .zone-box-item.active .zone-response-note strong,
+.section-coverage .zone-box-item:hover .zone-response-note strong {
+  color: #FFFFFF !important;
+}
+.section-coverage .zone-box-item.active .zone-color-indicator,
+.section-coverage .zone-box-item:hover .zone-color-indicator {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.95) !important;
+  transform: scale(1.35) !important;
+}
+
+/* 2.1 ZONA CENTRO -> PINTADO EN CELESTE */
+.section-coverage .zone-box-item[data-zone="centro"]:hover,
+.section-coverage .zone-box-item[data-zone="centro"].active {
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%) !important;
+  border-color: #38BDF8 !important;
+  border-left: 6px solid #BAE6FD !important;
+  box-shadow: 0 14px 32px rgba(2, 132, 199, 0.38) !important;
+}
+
+/* 2.2 ZONA NORTE -> PINTADO EN AZUL */
+.section-coverage .zone-box-item[data-zone="norte"]:hover,
+.section-coverage .zone-box-item[data-zone="norte"].active {
+  background: linear-gradient(135deg, #1D4ED8 0%, #1E3A8A 100%) !important;
+  border-color: #60A5FA !important;
+  border-left: 6px solid #BFDBFE !important;
+  box-shadow: 0 14px 32px rgba(29, 78, 216, 0.38) !important;
+}
+
+/* 2.3 ZONA SUR -> PINTADO EN NARANJA */
+.section-coverage .zone-box-item[data-zone="sur"]:hover,
+.section-coverage .zone-box-item[data-zone="sur"].active {
+  background: linear-gradient(135deg, #EA580C 0%, #9A3412 100%) !important;
+  border-color: #FB923C !important;
+  border-left: 6px solid #FED7AA !important;
+  box-shadow: 0 14px 32px rgba(234, 88, 12, 0.38) !important;
+}
+
+/* 2.4 ZONA ORIENTE -> PINTADO EN VERDE */
+.section-coverage .zone-box-item[data-zone="oriente"]:hover,
 .section-coverage .zone-box-item[data-zone="oriente"].active {
-  background: rgba(15, 26, 50, 0.96) !important;
+  background: linear-gradient(135deg, #16A34A 0%, #166534 100%) !important;
   border-color: #4ADE80 !important;
-  box-shadow: 0 12px 32px rgba(74, 222, 128, 0.25) !important;
+  border-left: 6px solid #BBF7D0 !important;
+  box-shadow: 0 14px 32px rgba(22, 163, 74, 0.38) !important;
 }
 
 /* Services Dynamic WhatsApp CTA */
@@ -7320,26 +7421,6 @@ html, body {
   fill: #E2E8F0 !important;
 }
 
-.section-coverage .zone-box-item {
-  background: rgba(255, 255, 255, 0.94) !important;
-  border: 1px solid rgba(234, 88, 12, 0.16) !important;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04) !important;
-}
-.section-coverage .zone-box-item:hover {
-  background: #FFFFFF !important;
-  border-color: #EA580C !important;
-  box-shadow: 0 12px 28px rgba(234, 88, 12, 0.12) !important;
-}
-
-.section-coverage .zone-box-header h4 {
-  color: #0F172A !important;
-}
-.section-coverage .zone-cities-text {
-  color: #475569 !important;
-}
-.section-coverage .zone-cities-text strong {
-  color: #0F172A !important;
-}
 
 /* --------------------------------------------------------------------------
    4. CONTACTO (#contacto): VERDE (#7DA137 / #16A34A / #22C55E)
