@@ -6965,43 +6965,59 @@ html, body {
 }
 
 
+
 /* ==========================================================================
-   LUMINOUS DAYLIGHT PARALLAX & ORGANIC SEAMLESS FLOW SYSTEM
+   4-COLOR BRANDED CHROMATIC PARALLAX SYSTEM (Inspired by the 4 Logo Dots)
+   1. Hero        -> Sky Blue / Azul Eléctrico (#5FA8DC / #0066FF)
+   2. Nosotros    -> Terracota Artesanal / Naranja (#C85A28 / #EA580C)
+   3. Cobertura   -> Verde Operativo / Logistic Green (#7DA137 / #16A34A)
+   4. Contacto    -> Azul Marino / Slate Ejecutivo (#1B365D / #3A6CA8)
    ========================================================================== */
 
-/* Organic Soft Edge Feathering: Eradicates the zebra-stripe transition */
+/* Universal Feathering Base */
 .parallax-section {
   position: relative;
-  background-color: #F8FAFC !important;
+  overflow: hidden;
 }
 
-.parallax-section::before {
+/* --------------------------------------------------------------------------
+   1. HERO (#hero): AZUL INSTITUCIONAL & SKY BLUE
+   -------------------------------------------------------------------------- */
+.overlay-hero {
+  background: linear-gradient(90deg,
+    rgba(238, 246, 255, 0.96) 0%,
+    rgba(245, 250, 255, 0.91) 45%,
+    rgba(224, 242, 254, 0.68) 75%,
+    rgba(186, 230, 253, 0.42) 100%
+  ) !important;
+}
+
+#hero.parallax-section::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 70px;
-  background: linear-gradient(to bottom, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  height: 60px;
+  background: linear-gradient(to bottom, #FFFFFF 0%, rgba(238, 246, 255, 0) 100%);
   z-index: 2;
   pointer-events: none;
 }
 
-.parallax-section::after {
+#hero.parallax-section::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 70px;
-  background: linear-gradient(to top, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  height: 60px;
+  background: linear-gradient(to top, #FFFFFF 0%, rgba(238, 246, 255, 0) 100%);
   z-index: 2;
   pointer-events: none;
 }
 
-/* 1. HERO: Crisp Luxury Commercial Architecture */
 .section-hero {
-  background-color: #F8FAFC !important;
+  background-color: #F0F7FF !important;
   border-bottom: none !important;
 }
 
@@ -7064,7 +7080,7 @@ html, body {
 }
 
 .hero-kpi-modern {
-  border-top: 1px solid #E2E8F0 !important;
+  border-top: 1px solid rgba(0, 102, 255, 0.18) !important;
 }
 .hero-kpi-modern .kpi-num {
   color: #0F172A !important;
@@ -7075,35 +7091,69 @@ html, body {
 
 .hero-slider-card {
   background: #FFFFFF !important;
-  border: 1px solid #E2E8F0 !important;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08) !important;
+  border: 1px solid rgba(0, 102, 255, 0.15) !important;
+  box-shadow: 0 20px 45px rgba(0, 102, 255, 0.08) !important;
 }
 
 .hero-slider-progress-track {
   background: rgba(0, 0, 0, 0.06) !important;
 }
 .hero-slider-progress-bar {
-  background: linear-gradient(90deg, #0066FF, #0284C7) !important;
+  background: linear-gradient(90deg, #5FA8DC, #0066FF) !important;
 }
 
 @media (max-width: 991px) {
   .overlay-hero {
-    background: rgba(255, 255, 255, 0.94) !important;
+    background: rgba(238, 246, 255, 0.95) !important;
   }
 }
 
-/* 2. NOSOTROS: Luminous Industrial Plant & Corporate Strength */
+/* --------------------------------------------------------------------------
+   2. NOSOTROS (#nosotros): TERRACOTA / NARANJA ARTESANAL (#C85A28)
+   -------------------------------------------------------------------------- */
+.overlay-nosotros {
+  background: linear-gradient(135deg,
+    rgba(255, 247, 237, 0.95) 0%,
+    rgba(255, 251, 247, 0.91) 48%,
+    rgba(254, 237, 213, 0.72) 100%
+  ) !important;
+}
+
+#nosotros.parallax-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, #FFFFFF 0%, rgba(255, 247, 237, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+#nosotros.parallax-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, #FFFFFF 0%, rgba(255, 247, 237, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .section-about {
-  background-color: #F8FAFC !important;
+  background-color: #FFF7ED !important;
   border-top: none !important;
   border-bottom: none !important;
 }
 
 .section-about .section-kicker {
-  color: #0066FF !important;
+  color: #C85A28 !important;
 }
 .section-about .section-kicker::before {
-  background: #0066FF !important;
+  background: #C85A28 !important;
 }
 
 .section-about .about-main-heading {
@@ -7112,7 +7162,7 @@ html, body {
 }
 
 .section-about .about-heading-accent-bar {
-  background: linear-gradient(90deg, #0066FF, #0284C7) !important;
+  background: linear-gradient(90deg, #C85A28, #F97316) !important;
 }
 
 .section-about .about-main-description {
@@ -7126,17 +7176,17 @@ html, body {
 
 .section-about .about-stat-card {
   background: rgba(255, 255, 255, 0.96) !important;
-  border: 1px solid #E2E8F0 !important;
-  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06) !important;
+  border: 1px solid rgba(200, 90, 40, 0.22) !important;
+  box-shadow: 0 16px 36px rgba(200, 90, 40, 0.08) !important;
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
 }
 
 .section-about .about-stat-card .stat-number-blue {
-  color: #0066FF !important;
+  color: #C85A28 !important;
 }
 .section-about .about-stat-card .stat-number-unit {
-  color: #64748B !important;
+  color: #9A3412 !important;
 }
 .section-about .about-stat-heading {
   color: #0F172A !important;
@@ -7145,25 +7195,25 @@ html, body {
   color: #64748B !important;
 }
 .section-about .about-stat-watermark {
-  stroke: rgba(0, 102, 255, 0.08) !important;
+  stroke: rgba(200, 90, 40, 0.12) !important;
 }
 
 .section-about .about-value-card {
   background: rgba(255, 255, 255, 0.96) !important;
-  border: 1px solid #E2E8F0 !important;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05) !important;
+  border: 1px solid rgba(200, 90, 40, 0.18) !important;
+  box-shadow: 0 10px 24px rgba(200, 90, 40, 0.05) !important;
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
 }
 .section-about .about-value-card:hover {
   background: #FFFFFF !important;
-  border-color: #0066FF !important;
-  box-shadow: 0 16px 36px rgba(0, 102, 255, 0.12) !important;
+  border-color: #C85A28 !important;
+  box-shadow: 0 16px 36px rgba(200, 90, 40, 0.16) !important;
   transform: translateY(-2px);
 }
 
 .section-about .value-num {
-  color: #0066FF !important;
+  color: #C85A28 !important;
 }
 .section-about .value-card-title {
   color: #0F172A !important;
@@ -7174,28 +7224,62 @@ html, body {
 
 .about-book-slider {
   background: #FFFFFF !important;
-  border: 1px solid #E2E8F0 !important;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08) !important;
+  border: 1px solid rgba(200, 90, 40, 0.20) !important;
+  box-shadow: 0 20px 45px rgba(200, 90, 40, 0.08) !important;
 }
 
 .book-page-counter {
   background: rgba(255, 255, 255, 0.95) !important;
-  border: 1px solid #E2E8F0 !important;
+  border: 1px solid rgba(200, 90, 40, 0.22) !important;
   color: #0F172A !important;
 }
 
-/* 3. COBERTURA: Luminous Nationwide Network & Interactive Peru Map */
+/* --------------------------------------------------------------------------
+   3. COBERTURA (#cobertura): VERDE OPERATIVO (#7DA137 / #16A34A)
+   -------------------------------------------------------------------------- */
+.overlay-cobertura {
+  background: linear-gradient(135deg,
+    rgba(240, 253, 244, 0.95) 0%,
+    rgba(247, 254, 249, 0.91) 48%,
+    rgba(220, 252, 231, 0.70) 100%
+  ) !important;
+}
+
+#cobertura.parallax-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, #FFFFFF 0%, rgba(240, 253, 244, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+#cobertura.parallax-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, #FFFFFF 0%, rgba(240, 253, 244, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .section-coverage {
-  background-color: #F8FAFC !important;
+  background-color: #F0FDF4 !important;
   border-top: none !important;
   border-bottom: none !important;
 }
 
 .section-coverage .section-kicker {
-  color: #0066FF !important;
+  color: #16A34A !important;
 }
 .section-coverage .section-kicker::before {
-  background: #0066FF !important;
+  background: #16A34A !important;
 }
 
 .section-coverage .section-main-heading {
@@ -7210,15 +7294,20 @@ html, body {
 
 .section-coverage .peru-map-container,
 .section-coverage .map-card-container {
-  background: rgba(255, 255, 255, 0.96) !important;
-  border: 1px solid #E2E8F0 !important;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08) !important;
-  background-image: radial-gradient(rgba(0, 102, 255, 0.05) 1px, transparent 0) !important;
+  background: rgba(255, 255, 255, 0.97) !important;
+  border: 1px solid rgba(22, 163, 74, 0.22) !important;
+  box-shadow: 0 20px 45px rgba(22, 163, 74, 0.08) !important;
+  background-image: radial-gradient(rgba(22, 163, 74, 0.06) 1px, transparent 0) !important;
 }
 
 .section-coverage .map-card-bar {
-  border-bottom: 1px solid #E2E8F0 !important;
-  color: #0284C7 !important;
+  border-bottom: 1px solid rgba(22, 163, 74, 0.16) !important;
+  color: #15803D !important;
+}
+
+.section-coverage .radar-dot {
+  background: #16A34A !important;
+  box-shadow: 0 0 10px #16A34A !important;
 }
 
 .section-coverage .dept-path {
@@ -7232,18 +7321,18 @@ html, body {
 
 .section-coverage .zone-box-item {
   background: rgba(255, 255, 255, 0.94) !important;
-  border: 1px solid #E2E8F0 !important;
+  border: 1px solid rgba(22, 163, 74, 0.16) !important;
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04) !important;
 }
 .section-coverage .zone-box-item:hover {
   background: #FFFFFF !important;
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08) !important;
+  border-color: #16A34A !important;
+  box-shadow: 0 12px 28px rgba(22, 163, 74, 0.12) !important;
 }
 
 .section-coverage .zone-box-header h4 {
   color: #0F172A !important;
 }
-
 .section-coverage .zone-cities-text {
   color: #475569 !important;
 }
@@ -7251,73 +7340,62 @@ html, body {
   color: #0F172A !important;
 }
 
-.section-coverage .zone-box-item[data-zone="centro"] .zone-response-note {
-  color: #0369A1 !important;
-  background: #E0F2FE !important;
-  border: 1px solid #BAE6FD !important;
-}
-.section-coverage .zone-box-item[data-zone="centro"] .zone-response-note strong {
-  color: #0284C7 !important;
-}
-.section-coverage .zone-box-item[data-zone="centro"].active {
-  background: #FFFFFF !important;
-  border-color: #0284C7 !important;
-  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.16) !important;
+/* --------------------------------------------------------------------------
+   4. CONTACTO (#contacto): AZUL MARINO / SLATE EJECUTIVO (#1B365D)
+   -------------------------------------------------------------------------- */
+.overlay-contacto {
+  background: linear-gradient(135deg,
+    rgba(241, 245, 249, 0.96) 0%,
+    rgba(248, 250, 252, 0.92) 50%,
+    rgba(226, 232, 240, 0.74) 100%
+  ) !important;
 }
 
-.section-coverage .zone-box-item[data-zone="norte"] .zone-response-note {
-  color: #1D4ED8 !important;
-  background: #EFF6FF !important;
-  border: 1px solid #BFDBFE !important;
-}
-.section-coverage .zone-box-item[data-zone="norte"] .zone-response-note strong {
-  color: #1E40AF !important;
-}
-.section-coverage .zone-box-item[data-zone="norte"].active {
-  background: #FFFFFF !important;
-  border-color: #2563EB !important;
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.16) !important;
+#contacto.parallax-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, #FFFFFF 0%, rgba(241, 245, 249, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
 }
 
-.section-coverage .zone-box-item[data-zone="sur"] .zone-response-note {
-  color: #C2410C !important;
-  background: #FFF7ED !important;
-  border: 1px solid #FFEDD5 !important;
-}
-.section-coverage .zone-box-item[data-zone="sur"] .zone-response-note strong {
-  color: #9A3412 !important;
-}
-.section-coverage .zone-box-item[data-zone="sur"].active {
-  background: #FFFFFF !important;
-  border-color: #EA580C !important;
-  box-shadow: 0 10px 25px rgba(234, 88, 12, 0.16) !important;
+#contacto.parallax-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, #FFFFFF 0%, rgba(241, 245, 249, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
 }
 
-.section-coverage .zone-box-item[data-zone="oriente"] .zone-response-note {
-  color: #15803D !important;
-  background: #F0FDF4 !important;
-  border: 1px solid #BBF7D0 !important;
-}
-.section-coverage .zone-box-item[data-zone="oriente"] .zone-response-note strong {
-  color: #166534 !important;
-}
-.section-coverage .zone-box-item[data-zone="oriente"].active {
-  background: #FFFFFF !important;
-  border-color: #16A34A !important;
-  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.16) !important;
-}
-
-/* 4. CONTACTO: Executive Daylight Architectural Card */
 .section-conversion-cta {
-  background-color: #F8FAFC !important;
+  background-color: #F1F5F9 !important;
+}
+
+.section-conversion-cta .section-kicker {
+  color: #1B365D !important;
+}
+.section-conversion-cta .section-kicker::before {
+  background: #1B365D !important;
 }
 
 .cta-corporate-card {
-  background: rgba(255, 255, 255, 0.96) !important;
-  border: 1px solid #E2E8F0 !important;
-  box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.08) !important;
+  background: rgba(255, 255, 255, 0.97) !important;
+  border: 1px solid rgba(27, 54, 93, 0.18) !important;
+  box-shadow: 0 25px 60px -15px rgba(27, 54, 93, 0.12) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
+}
+
+.cta-ambient-glow {
+  background: radial-gradient(circle, rgba(27, 54, 93, 0.10) 0%, transparent 70%) !important;
 }
 
 .cta-main-title {
@@ -7335,19 +7413,27 @@ html, body {
   color: #0F172A !important;
 }
 .cta-meta-item svg {
-  color: #0066FF !important;
+  color: #1B365D !important;
 }
 
 .cta-action-card-inner {
   background: #F8FAFC !important;
-  border: 1px solid #E2E8F0 !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(27, 54, 93, 0.16) !important;
+  box-shadow: 0 10px 25px rgba(27, 54, 93, 0.05) !important;
 }
 
 .cta-action-eyebrow {
-  color: #0284C7 !important;
+  color: #1B365D !important;
 }
 
 .cta-action-subnote {
   color: #64748B !important;
+}
+
+.btn-cta-brief {
+  background: linear-gradient(135deg, #1B365D, #0066FF) !important;
+  box-shadow: 0 8px 22px rgba(27, 54, 93, 0.25) !important;
+}
+.btn-cta-brief:hover {
+  box-shadow: 0 12px 28px rgba(27, 54, 93, 0.35) !important;
 }
